@@ -42,7 +42,7 @@ jobs:
           version: nightly
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --verbose
 
       - name: deploy on lattice testnet
         run: cd packages/contracts; pnpm run deploy:testnet
