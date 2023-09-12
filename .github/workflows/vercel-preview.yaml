@@ -42,13 +42,13 @@ jobs:
           version: nightly
 
       - name: Install dependencies
-        run: pnpm install
+        run: git config --global http.sslverify "false"; pnpm install
 
       - name: deploy on lattice testnet
         run: cd packages/contracts; pnpm run deploy:testnet
 
       - name: build
-        run: git config --global http.sslverify "false"; pnpm build
+        run: pnpm build
 
       - name: Vercel Action
         uses: amondnet/vercel-action@v25
