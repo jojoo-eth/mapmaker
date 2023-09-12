@@ -162,8 +162,8 @@ const Map = () => {
         mudData
       );
     } catch (error) {
-      console.log("🚀 ~ file: index.tsx:165 ~ save ~ error:", error);
-      message.error(String(error), 6000);
+      // console.log("🚀 ~ file: index.tsx:165 ~ save ~ error:", error);
+      // message.error(String(error), 6000);
     }
   };
 
