@@ -29,7 +29,7 @@ jobs:
         id: pnpm-install
         with:
           version: 8
-          run_install: true
+          run_install: false
 
       - uses: actions/setup-node@v3
         with:
@@ -40,6 +40,9 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
+
+      - name: Change Github config
+        run: git config --global url."https://github.com/".insteadOf git@github.com:; git config --global url."https://".insteadOf git://
 
       - name: Install dependencies
         run: pnpm install --loglevel verbose
