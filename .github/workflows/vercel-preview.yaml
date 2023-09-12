@@ -28,7 +28,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 8
+          version: 8.6
           run_install: false
 
       - uses: actions/setup-node@v3
@@ -42,7 +42,7 @@ jobs:
           version: nightly
 
       - name: Install dependencies
-        run: git config --global http.sslverify "false"; pnpm install
+        run: pnpm install
 
       - name: deploy on lattice testnet
         run: cd packages/contracts; pnpm run deploy:testnet
