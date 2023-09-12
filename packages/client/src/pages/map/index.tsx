@@ -153,8 +153,12 @@ const Map = () => {
   };
 
   const save = () => {
-    const { start, end, mudData } = getFormatMUDData(data);
-    move(target.x - start.x, target.y - start.y, end.x - start.x, mudData);
+    try {
+      const { start, end, mudData } = getFormatMUDData(data);
+      move(target.x - start.x, target.y - start.y, end.x - start.x, mudData);
+    } catch (error) {
+      message.error(String(error), 6000);
+    }
   };
 
   useEffect(() => {
