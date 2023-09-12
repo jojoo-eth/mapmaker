@@ -152,10 +152,15 @@ const Map = () => {
     setAroundPoints();
   };
 
-  const save = () => {
+  const save = async () => {
     try {
       const { start, end, mudData } = getFormatMUDData(data);
-      move(target.x - start.x, target.y - start.y, end.x - start.x, mudData);
+      await move(
+        target.x - start.x,
+        target.y - start.y,
+        end.x - start.x,
+        mudData
+      );
     } catch (error) {
       message.error(String(error), 6000);
     }
