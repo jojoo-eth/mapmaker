@@ -7,7 +7,7 @@ const worlds = worldsJson as Partial<Record<string, { address: string; blockNumb
 export async function getNetworkConfig() {
   const params = new URLSearchParams(window.location.search);
   // 11155111
-  const chainId = 5;
+  const chainId = 4242;
   // const chainId = Number(params.get("chainId") || params.get("chainid") || import.meta.env.VITE_CHAIN_ID || 31337);
   const chainIndex = supportedChains.findIndex((c) => c.id === chainId);
   const chain = supportedChains[chainIndex];
